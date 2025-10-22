@@ -33,13 +33,12 @@
                     <td>{{ $contact->object }}</td>
                     <td>{{ $contact->message }}</td>
                     <td>
-                        <a href="#" class="btn btn-primary">Update</a>
-                        <form action="{{ route('contact_destroy', $contact->id) }}";  method="POST";  style="display:inline;">
+                        <a href="{{ route('contact_edit', $contact->id) }}" class="btn btn-primary">Update</a>
+                        <form action="{{ route('contact_destroy', $contact->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
-                        
                     </td>
                 </tr>
             @endforeach
@@ -47,4 +46,4 @@
     </table>
 </div>
 </body>
-</html></tr>
+</html>
